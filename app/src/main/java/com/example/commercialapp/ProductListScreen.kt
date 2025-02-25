@@ -144,7 +144,19 @@ fun ProductItem(product: Product, onClick: () -> Unit) {
                 fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(7.dp))
 
-            Text(text = product.type, fontSize = 14.sp)
+            Row (verticalAlignment = Alignment.CenterVertically) {
+                Text(text = product.type, fontSize = 14.sp)
+                Spacer(modifier = Modifier.weight(1f))
+                Text("${product.rating}", fontSize = 14.sp)
+                Spacer(modifier = Modifier.width(3.dp))
+                Icon(
+                    painter = painterResource(R.drawable.icons_star),
+                    contentDescription = "Star",
+                    tint = Color(0xFFFA9A00),
+                    modifier = Modifier.size(14.dp)
+                )
+            }
+
             Spacer(modifier = Modifier.height(7.dp))
 
             Row(
